@@ -3,4 +3,5 @@ const totalPayment = data.reduce(
       total + (+item.price - (+item.price * item.discount) / 100),
     0
   );
+
   

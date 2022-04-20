@@ -13,6 +13,7 @@ const Main = () => {
         <Panel setFormData={setFormData} />
       </Sider>
 
+<<<<<<< HEAD
       <Content>
         <ListContainer data={formData} />
         <Divider />
@@ -30,3 +31,9 @@ export default Main;
 // git add .
 // git commit -m "taghir"
 // git push origin master
+=======
+export default Main
+
+
+// nemidonam
+>>>>>>> 79c1c03da00aaf01881ab5acbcd287b451154e4f
