@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "./Panel.css";
-import { Slider, Form, Input, InputNumber, Col, Button, Space } from "antd";
+import { Slider, Form, Input, InputNumber, Button } from "antd";
+import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
 const Panel = ({ setFormData }) => {
   const [price, setPrice] = useState(0);
   const [disc, setDisc] = useState(0);
+  const [count, setCount] = useState(0);
   const finishHandler = (values) => {
     setFormData((prev) => [...prev, values]);
+    console.log(values);
   };
+
   return (
     <>
       <Form onFinish={finishHandler}>
@@ -38,6 +42,24 @@ const Panel = ({ setFormData }) => {
               placeholder="enter your product name"
             />
           </Form.Item>
+          <Form.Item
+            label="count of product"
+            labelAlign={"left"}
+            labelCol={{ span: 24 }}
+          ></Form.Item>
+          <Form.Item
+            name="count"
+            rules={[{ required: true, message: "count is Required" }]}
+          >
+            <InputNumber
+              onChange={(value) => setCount(value)}
+              size={"large"}
+              style={{ width: "100%" }}
+              controls={false}
+              min={0}
+              placeholder="tedado benevis"
+            />
+          </Form.Item>
         </Form.Item>
         <Form.Item
           label="discount"
@@ -58,7 +80,9 @@ const Panel = ({ setFormData }) => {
           <span
             style={{ padding: "0 5px", fontWeight: "bold", fontSize: "24px" }}
           >
-            {price - (price * disc) / 100} $
+            {/* {price - (price * disc) / 100} $ */}
+            {calcFinalPrice(price, disc, count)}
+            
           </span>
         </Form.Item>
         <Form.Item>

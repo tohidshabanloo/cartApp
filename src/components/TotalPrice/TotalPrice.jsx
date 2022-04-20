@@ -4,16 +4,17 @@ import { Card } from "antd";
 const TotalPrice = ({ data }) => {
   const totalPayment = data.reduce(
     (total, item) =>
-      total + (+item.price - (+item.price * item.discount) / 100),
+      total + item.count * (+item.price - (+item.price * item.discount) / 100),
     0
   );
-  const totalPrice = data.reduce((total, item) => total + item.price, 0);
+  const totalPrice = data.reduce(
+    (total, item) => total + item.count * item.price,
+    0
+  );
   const totalDiscount = totalPayment
     ? Math.floor(100 - (+totalPayment * 100) / +totalPrice)
     : 0;
-  {
-    console.log(totalPayment, totalPrice, totalDiscount);
-  }
+
   return (
     <Card className={`summery-container`}>
       <Card.Grid>
