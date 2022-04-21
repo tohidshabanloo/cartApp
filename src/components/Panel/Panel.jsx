@@ -82,7 +82,6 @@ const Panel = ({ setFormData }) => {
           >
             {/* {price - (price * disc) / 100} $ */}
             {calcFinalPrice(price, disc, count)}
-            
           </span>
         </Form.Item>
         <Form.Item>

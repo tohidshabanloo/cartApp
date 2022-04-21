@@ -1,3 +1,41 @@
 .delete {
-  font-size: 20px;
+  font-size: 200px;
+}
+.ant-list-item.list-items {
+}
+.ant-layout-content {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+/* actions Button */
+.ant-tag.action {
+  border: none;
+}
+.anticon.anticon-delete.delete {
+  font-size: 30px;
+  border: none;
+  color: rgba(255, 0, 0, 0.695);
+  cursor: pointer;
+}
+.anticon.anticon-delete.delete:hover {
+  transition: background 0.3s;
+  color: red;
+}
+.anticon.anticon-edit.edit {
+  font-size: 30px;
+  border: none;
+  color: rgb(3, 84, 3);
+  cursor: pointer;
+}
+.anticon.anticon-edit.edit:hover {
+  transition: background 0.3s;
+  color: rgb(0, 160, 0);
+}
+
+.ant-tag.ant-tag-has-color.tag{
+  font-size: 25px;
+  padding: 4px;
+  border-radius: 8px;
+  
 }

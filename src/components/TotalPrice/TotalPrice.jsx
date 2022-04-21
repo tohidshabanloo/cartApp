@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "antd";
+import './TotalPrice.css'
 
 const TotalPrice = ({ data }) => {
   const totalPayment = data.reduce(
@@ -17,11 +18,11 @@ const TotalPrice = ({ data }) => {
 
   return (
     <Card className={`summery-container`}>
-      <Card.Grid>
+      <Card.Grid className="total-price">
         <span>Total Price</span>
         <h3>{totalPrice} $</h3>
       </Card.Grid>
-      <Card.Grid>
+      <Card.Grid className="total-discount">
         <span>Total Discount</span>
         <h3>{totalDiscount}%</h3>
       </Card.Grid>

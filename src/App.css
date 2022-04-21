@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -24,6 +25,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -78,6 +80,9 @@ label {
 .ant-row {
   width: 100%;
 }
+.ant-col.ant-col-6{
+  width: 2%;
+}
 .list-container .ant-typography {
   margin-top: 0 !important;
 }
@@ -89,3 +94,4 @@ label {
   width: fit-content;
   padding: 3px 20px;
 }
+
