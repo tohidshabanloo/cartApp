@@ -1,6 +1,3 @@
-.delete {
-  font-size: 200px;
-}
 .ant-list-item.list-items {
 }
 .ant-layout-content {
@@ -33,9 +30,8 @@
   color: rgb(0, 160, 0);
 }
 
-.ant-tag.ant-tag-has-color.tag{
-  font-size: 25px;
+.ant-tag.ant-tag-has-color.tag {
+  font-size: 20px;
   padding: 4px;
   border-radius: 8px;
-  
 }

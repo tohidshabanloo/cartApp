@@ -20,25 +20,25 @@ const ListContainer = ({ data }) => {
           <Row gutter={16}>
             <Col span={6}>
               <Text type={"secondary"}>Name:</Text>
-              <Title level={3}>{item?.name}</Title>
+              <Title level={5}>{item?.name}</Title>
             </Col>
             <Col span={4}>
               <Text type={"secondary"}>Price:</Text>
-              <Title level={3}>{item?.price}$</Title>
+              <Title level={5}>{item?.price}$</Title>
             </Col>
-            <Col span={2}>
+            <Col span={3}>
               <Text type={"secondary"}>Count:</Text>
-              <Title level={3}>x {item?.count} </Title>
+              <Title level={5}>x {item?.count} </Title>
             </Col>
-            <Col span={2}>
+            <Col span={4}>
               <Text type={"secondary"}>Discount:</Text>
               <Tag color={"#108ee9"} className={`tag`} >
                 {item?.discount}%
               </Tag>
             </Col>
-            <Col span={8}>
+            <Col span={4}>
               <Text type={"secondary"}>Final Price:</Text>
-              <Title className={"final-price"} level={3}>
+              <Title className={"final-price"} level={5}>
                 {/* {item?.price - (item?.price * item?.discount) / 100} $ */}
                 {calcFinalPrice(item?.price, item?.discount, item?.count)}
               </Title>
