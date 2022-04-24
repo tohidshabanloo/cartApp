@@ -8,7 +8,12 @@ import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
 const { Title, Text } = Typography;
 
-const ListContainer = ({ data }) => {
+const ListContainer = ({ data, setFormData }) => {
+  const removeTodo = (id) => {
+    const updatedTodos = data.filter((item) => item.id !== id);
+    setFormData(updatedTodos);
+  };
+  
   return (
     <List
       className={`list-container`}
@@ -16,6 +21,7 @@ const ListContainer = ({ data }) => {
       itemLayout="horizontal"
       dataSource={data}
       renderItem={(item) => (
+        { data.map((item, i) => (
         <List.Item className={`list-items`}>
           <Row gutter={16}>
             <Col span={6}>
@@ -46,12 +52,13 @@ const ListContainer = ({ data }) => {
             <Col span={3}>
               <Text type={"secondary"}>Action:</Text>
               <Tag className="action">
-                <DeleteOutlined className="delete" />
+                <DeleteOutlined className="delete" onClick={removeTodo} />
                 <EditOutlined className="edit" />
               </Tag>
             </Col>
           </Row>
         </List.Item>
+        ))}
       )}
     />
   );

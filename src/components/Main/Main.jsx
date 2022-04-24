@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Divider, Layout, Space } from "antd";
+import { v4 as uuid } from "uuid";
 import "./Main.css";
 import Panel from "../Panel/Panel";
 import ListContainer from "../ListContainer/ListContainer";
@@ -14,7 +15,7 @@ const Main = () => {
         <Panel setFormData={setFormData} />
       </Sider>
       <Content>
-        <ListContainer data={formData} />
+        <ListContainer data={formData} setFormData={setFormData} />
         <Divider />
         <TotalPrice data={formData} />
       </Content>
