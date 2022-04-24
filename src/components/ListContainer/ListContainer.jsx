@@ -32,7 +32,7 @@ const ListContainer = ({ data }) => {
             </Col>
             <Col span={4}>
               <Text type={"secondary"}>Discount:</Text>
-              <Tag color={"#108ee9"} className={`tag`} >
+              <Tag color={"#108ee9"} className={`tag`}>
                 {item?.discount}%
               </Tag>
             </Col>

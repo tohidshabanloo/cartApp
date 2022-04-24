@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Divider, Layout, Space } from "antd";
+import "./Main.css";
 import Panel from "../Panel/Panel";
 import ListContainer from "../ListContainer/ListContainer";
 import TotalPrice from "../TotalPrice/TotalPrice";
