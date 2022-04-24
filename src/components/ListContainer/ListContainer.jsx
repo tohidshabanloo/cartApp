@@ -43,7 +43,7 @@ const ListContainer = ({ data }) => {
                 {calcFinalPrice(item?.price, item?.discount, item?.count)}
               </Title>
             </Col>
-            <Col span={2}>
+            <Col span={3}>
               <Text type={"secondary"}>Action:</Text>
               <Tag className="action">
                 <DeleteOutlined className="delete" />

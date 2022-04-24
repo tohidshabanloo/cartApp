@@ -10,7 +10,7 @@
   border: none;
 }
 .anticon.anticon-delete.delete {
-  font-size: 30px;
+  font-size: 20px;
   border: none;
   color: rgba(255, 0, 0, 0.695);
   cursor: pointer;
@@ -20,14 +20,14 @@
   color: red;
 }
 .anticon.anticon-edit.edit {
-  font-size: 30px;
+  font-size: 20px;
   border: none;
-  color: rgb(3, 84, 3);
+  color: rgb(5, 156, 5);
   cursor: pointer;
 }
 .anticon.anticon-edit.edit:hover {
   transition: background 0.3s;
-  color: rgb(0, 160, 0);
+  color: rgb(8, 232, 8);
 }
 
 .ant-tag.ant-tag-has-color.tag {
