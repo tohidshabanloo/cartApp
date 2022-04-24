@@ -9,7 +9,7 @@ const Main = () => {
   const [formData, setFormData] = useState([]);
   return (
     <Layout className={`layout-container`}>
-      <Sider width={500} className={`side-container`}>
+      <Sider width={400} className={`side-container`}>
         <Panel setFormData={setFormData} />
       </Sider>
       <Content>
