@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import "./Panel.css";
-import { Slider, Form, Input, InputNumber, Button } from "antd";
-import { calcFinalPrice } from "../../modules/calcFinalPrice";
-import { v4 as uuidv4 } from "uuid";
+import { Modal, Button } from "antd";
 
-const Panel = ({ setFormData }) => {
-  const [price, setPrice] = useState(0);
-  const [disc, setDisc] = useState(0);
-  const [count, setCount] = useState(0);
-  const finishHandler = (values) => {
-    setFormData((prev) => [...prev, { ...values, id: uuidv4() }]);
-  };
-
+const EditForm = (finishHandler) => {
+  const [name, setName] = useState(editData.name);
+  const [price, setPrice] = useState(editData.price);
+  const [disc, setDisc] = useState(editData.discount);
+  const [count, setCount] = useState(editData.count);
   return (
     <>
       <Form onFinish={finishHandler}>
@@ -101,4 +95,4 @@ const Panel = ({ setFormData }) => {
   );
 };
 
-export default Panel;
+export default EditForm;

@@ -4,6 +4,7 @@ import "./Main.css";
 import Panel from "../Panel/Panel";
 import ListContainer from "../ListContainer/ListContainer";
 import TotalPrice from "../TotalPrice/TotalPrice";
+import EditForm from "../EditForm/EditForm";
 
 const { Content, Sider } = Layout;
 const Main = () => {
@@ -14,7 +15,7 @@ const Main = () => {
         <Panel setFormData={setFormData} />
       </Sider>
       <Content>
-        <ListContainer data={formData} />
+        <ListContainer data={formData} setFormData={setFormData} />
         <Divider />
         <TotalPrice data={formData} />
       </Content>

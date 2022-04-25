@@ -3,12 +3,17 @@ import { List, Row, Col, Typography, Tag } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { EditOutlined } from "@ant-design/icons";
 import "./ListContainer.css";
+import { v4 as uuidv4 } from "uuid";
 
 import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
 const { Title, Text } = Typography;
 
-const ListContainer = ({ data }) => {
+const ListContainer = ({ data, setFormData }) => {
+  const deletHandler = (id) => {
+    let finalData = data.filter((item) => item.id !== id);
+    setFormData(finalData);
+  };
   return (
     // <p>something from before</p>
     <List
@@ -47,7 +52,10 @@ const ListContainer = ({ data }) => {
             <Col span={3}>
               <Text type={"secondary"}>Action:</Text>
               <Tag className="action">
-                <DeleteOutlined className="delete" />
+                <DeleteOutlined
+                  className="delete"
+                  onClick={() => deletHandler(item?.id)}
+                />
                 <EditOutlined className="edit" />
               </Tag>
             </Col>
