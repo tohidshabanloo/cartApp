@@ -17,21 +17,21 @@ const Panel = ({ setFormData }) => {
       <Form onFinish={finishHandler}>
         <Form.Item
           className="name"
-          label="name"
+          label="نام محصول"
           labelAlign={"left"}
           labelCol={{ span: 24 }}
         >
           <Form.Item
             name="name"
-            rules={[{ required: true, message: "Name is Required" }]}
+            rules={[{ required: true, message: "نام محصول را وارد کنید" }]}
           >
-            <Input size={"large"} placeholder="enter your product name" />
+            <Input size={"large"} placeholder="نام محصول را وارد کنید" />
           </Form.Item>
         </Form.Item>
-        <Form.Item label="price" labelAlign={"left"} labelCol={{ span: 24 }}>
+        <Form.Item label="قیمت" labelAlign={"left"} labelCol={{ span: 24 }}>
           <Form.Item
             name="price"
-            rules={[{ required: true, message: "Price is Required" }]}
+            rules={[{ required: true, message: "قیمت را وارد کنید" }]}
           >
             <InputNumber
               onChange={(value) => setPrice(value)}
@@ -43,13 +43,13 @@ const Panel = ({ setFormData }) => {
             />
           </Form.Item>
           <Form.Item
-            label="count of product"
+            label="تعداد محصول"
             labelAlign={"left"}
             labelCol={{ span: 24 }}
           ></Form.Item>
           <Form.Item
             name="count"
-            rules={[{ required: true, message: "count is Required" }]}
+            rules={[{ required: true, message: "تعداد را وارد کنید" }]}
           >
             <InputNumber
               onChange={(value) => setCount(value)}
