@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "antd";
-import './TotalPrice.css'
+import "./TotalPrice.css";
 
 const TotalPrice = ({ data }) => {
   const totalPayment = data.reduce(
@@ -19,16 +19,16 @@ const TotalPrice = ({ data }) => {
   return (
     <Card className={`summery-container`}>
       <Card.Grid className="total-price">
-        <span>Total Price</span>
+        <span>قیمت کل</span>
         <h3>{totalPrice} $</h3>
       </Card.Grid>
       <Card.Grid className="total-discount">
-        <span>Total Discount</span>
+        <span>مجموع تخفیف</span>
         <h3>{totalDiscount}%</h3>
       </Card.Grid>
       <Card.Grid className={`total-payment`}>
-        <span>Total Payment :</span>
-        <h3>{totalPayment}$</h3>
+        <span>هزینه نهایی :</span>
+        <h3>{totalPayment} تومان </h3>
       </Card.Grid>
     </Card>
   );

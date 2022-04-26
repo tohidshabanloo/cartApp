@@ -2,7 +2,6 @@
 
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -25,7 +24,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  
 }
 
 .App-link {
@@ -61,6 +59,10 @@
 }
 .ant-layout-sider.ant-layout-sider-dark.side-container {
   background-color: rgba(252, 175, 156, 0.63);
+  text-align: right;
+}
+.ant-col.ant-col-24.ant-form-item-label.ant-form-item-label-left.ant-col-rtl {
+  text-align: right;
 }
 .ant-form-item {
   margin-bottom: 10px !important;
@@ -80,7 +82,7 @@ label {
 .ant-row {
   width: 100%;
 }
-.ant-col.ant-col-6{
+.ant-col.ant-col-6 {
   width: 2%;
 }
 .list-container .ant-typography {
@@ -94,4 +96,3 @@ label {
   width: fit-content;
   padding: 3px 20px;
 }
-

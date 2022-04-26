@@ -9,18 +9,22 @@ const EditForm = ({ editData, finishHandler }) => {
   return (
     <>
       <Form onFinish={finishHandler} preserve={false} initialValues={editData}>
-        <Form.Item label="name" labelAlign={"left"} labelCol={{ span: 24 }}>
+        <Form.Item
+          label="نام محصول"
+          labelAlign={"left"}
+          labelCol={{ span: 24 }}
+        >
           <Form.Item
             name="name"
-            rules={[{ required: true, message: "Name is Required" }]}
+            rules={[{ required: true, message: "نام محصول را وارد کنید" }]}
           >
-            <Input size={"large"} placeholder="edit your product name" />
+            <Input size={"large"} placeholder="ویرایش نام محصول" />
           </Form.Item>
         </Form.Item>
         <Form.Item label="price" labelAlign={"left"} labelCol={{ span: 24 }}>
           <Form.Item
             name="price"
-            rules={[{ required: true, message: "Price is Required" }]}
+            rules={[{ required: true, message: "قیمت را وارد کنید" }]}
           >
             <InputNumber
               onChange={(value) => setPrice(value)}
@@ -28,34 +32,34 @@ const EditForm = ({ editData, finishHandler }) => {
               style={{ width: "100%" }}
               controls={false}
               min={0}
-              placeholder="edit your product price"
+              placeholder="ویرایش قیمت محصول"
             />
           </Form.Item>
         </Form.Item>
         <Form.Item
-          label="Count of product"
+          label="تعداد محصول"
           labelAlign={"left"}
           labelCol={{ span: 24 }}
         >
           <Form.Item
             name="count"
-            rules={[{ required: true, message: "edit thr number of products" }]}
+            rules={[{ required: true, message: "تعداد را وارد کنید" }]}
           >
             <InputNumber
               onChange={(value) => setCount(value)}
               size={"large"}
               style={{ width: "100%" }}
               min={1}
-              placeholder="enter your product name"
+              placeholder="ویرایش تعداد محصول"
             />
           </Form.Item>
         </Form.Item>
         <Form.Item
-          label="discount"
+          label="درصد تخفیف"
           name={"discount"}
           labelAlign={"left"}
           labelCol={{ span: 24 }}
-          rules={[{ required: true, message: "edit the discount" }]}
+          rules={[{ required: true, message: "ویرایش درصد تخفیف" }]}
         >
           <Slider
             tipFormatter={(value) => `${value}%`}
@@ -65,11 +69,11 @@ const EditForm = ({ editData, finishHandler }) => {
           />
         </Form.Item>
         <Form.Item>
-          <span>Final Price :</span>
+          <span>قیمت نهایی:</span>
           <span
             style={{ padding: "0 5px", fontWeight: "bold", fontSize: "24px" }}
           >
-            {count * (price - (price * disc) / 100)} $
+            {count * (price - (price * disc) / 100)} ریال
           </span>
         </Form.Item>
         <Form.Item>

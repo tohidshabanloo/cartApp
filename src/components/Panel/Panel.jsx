@@ -25,7 +25,7 @@ const Panel = ({ setFormData }) => {
             name="name"
             rules={[{ required: true, message: "نام محصول را وارد کنید" }]}
           >
-            <Input size={"large"} placeholder="نام محصول را وارد کنید" />
+            <Input size={"large"} placeholder="نام محصول" />
           </Form.Item>
         </Form.Item>
         <Form.Item label="قیمت" labelAlign={"left"} labelCol={{ span: 24 }}>
@@ -39,7 +39,7 @@ const Panel = ({ setFormData }) => {
               style={{ width: "100%" }}
               controls={false}
               min={0}
-              placeholder="enter your product name"
+              placeholder="قیمت محصول"
             />
           </Form.Item>
           <Form.Item
@@ -57,12 +57,12 @@ const Panel = ({ setFormData }) => {
               style={{ width: "100%" }}
               controls={false}
               min={0}
-              placeholder="tedado benevis"
+              placeholder="تعداد محصول"
             />
           </Form.Item>
         </Form.Item>
         <Form.Item
-          label="discount"
+          label="درصد تخفیف"
           name={"discount"}
           labelAlign={"left"}
           labelCol={{ span: 24 }}
@@ -76,12 +76,12 @@ const Panel = ({ setFormData }) => {
           />
         </Form.Item>
         <Form.Item>
-          <span>Final Price :</span>
+          <span>قیمت نهایی :</span>
           <span
             style={{ padding: "0 5px", fontWeight: "bold", fontSize: "24px" }}
           >
             {/* {price - (price * disc) / 100} $ */}
-            {calcFinalPrice(price, disc, count)}
+            {calcFinalPrice(price, disc, count)} تومان 
           </span>
         </Form.Item>
         <Form.Item>

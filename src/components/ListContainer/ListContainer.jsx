@@ -4,7 +4,6 @@ import { DeleteOutlined } from "@ant-design/icons";
 import { EditOutlined } from "@ant-design/icons";
 import "./ListContainer.css";
 
-
 import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
 const { Title, Text } = Typography;
@@ -27,32 +26,32 @@ const ListContainer = ({ data, setData, setEditData }) => {
         <List.Item className={`list-items`}>
           <Row gutter={16}>
             <Col span={6}>
-              <Text type={"secondary"}>Name:</Text>
+              <Text type={"secondary"}>نام محصول:</Text>
               <Title level={5}>{item?.name}</Title>
             </Col>
             <Col span={4}>
-              <Text type={"secondary"}>Price:</Text>
+              <Text type={"secondary"}>قیمت:</Text>
               <Title level={5}>{item?.price}$</Title>
             </Col>
             <Col span={3}>
-              <Text type={"secondary"}>Count:</Text>
+              <Text type={"secondary"}>تعداد:</Text>
               <Title level={5}>x {item?.count} </Title>
             </Col>
             <Col span={4}>
-              <Text type={"secondary"}>Discount:</Text>
+              <Text type={"secondary"}>تخفیف:</Text>
               <Tag color={"#108ee9"} className={`tag`}>
                 {item?.discount}%
               </Tag>
             </Col>
             <Col span={4}>
-              <Text type={"secondary"}>Final Price:</Text>
+              <Text type={"secondary"}>قیمت نهایی:</Text>
               <Title className={"final-price"} level={5}>
                 {/* {item?.price - (item?.price * item?.discount) / 100} $ */}
-                {calcFinalPrice(item?.price, item?.discount, item?.count)}
+                {calcFinalPrice(item?.price, item?.discount, item?.count)} تومان
               </Title>
             </Col>
             <Col span={3}>
-              <Text type={"secondary"}>Action:</Text>
+              <Text type={"secondary"}>تغییرات:</Text>
               <Tag className="action">
                 <DeleteOutlined
                   className="delete"
