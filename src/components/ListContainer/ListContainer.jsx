@@ -3,7 +3,7 @@ import { List, Row, Col, Typography, Tag } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { EditOutlined } from "@ant-design/icons";
 import "./ListContainer.css";
-import { v4 as uuidv4 } from "uuid";
+
 
 import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
