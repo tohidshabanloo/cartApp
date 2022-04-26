@@ -1,25 +1,21 @@
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
+import { Button, Form, Input, InputNumber, Slider } from "antd";
 
-const EditForm = (finishHandler) => {
+const EditForm = ({ editData, finishHandler }) => {
   const [name, setName] = useState(editData.name);
   const [price, setPrice] = useState(editData.price);
   const [disc, setDisc] = useState(editData.discount);
-  const [count, setCount] = useState(editData.count);
+  const [count, setCount] = useState(editData?.count);
+
   return (
     <>
-      <Form onFinish={finishHandler}>
-        <Form.Item
-          className="name"
-          label="name"
-          labelAlign={"left"}
-          labelCol={{ span: 24 }}
-        >
+      <Form onFinish={finishHandler} preserve={false} initialValues={editData}>
+        <Form.Item label="name" labelAlign={"left"} labelCol={{ span: 24 }}>
           <Form.Item
             name="name"
             rules={[{ required: true, message: "Name is Required" }]}
           >
-            <Input size={"large"} placeholder="enter your product name" />
+            <Input size={"large"} placeholder="edit your product name" />
           </Form.Item>
         </Form.Item>
         <Form.Item label="price" labelAlign={"left"} labelCol={{ span: 24 }}>
@@ -33,25 +29,25 @@ const EditForm = (finishHandler) => {
               style={{ width: "100%" }}
               controls={false}
               min={0}
-              placeholder="enter your product name"
+              placeholder="edit your product price"
             />
           </Form.Item>
-          <Form.Item
-            label="count of product"
-            labelAlign={"left"}
-            labelCol={{ span: 24 }}
-          ></Form.Item>
+        </Form.Item>
+        <Form.Item
+          label="Count of product"
+          labelAlign={"left"}
+          labelCol={{ span: 24 }}
+        >
           <Form.Item
             name="count"
-            rules={[{ required: true, message: "count is Required" }]}
+            rules={[{ required: true, message: "edit thr number of products" }]}
           >
             <InputNumber
               onChange={(value) => setCount(value)}
               size={"large"}
               style={{ width: "100%" }}
-              controls={false}
-              min={0}
-              placeholder="tedado benevis"
+              min={1}
+              placeholder="enter your product name"
             />
           </Form.Item>
         </Form.Item>
@@ -60,13 +56,13 @@ const EditForm = (finishHandler) => {
           name={"discount"}
           labelAlign={"left"}
           labelCol={{ span: 24 }}
+          rules={[{ required: true, message: "edit the discount" }]}
         >
           <Slider
             tipFormatter={(value) => `${value}%`}
             onChange={(value) => setDisc(value)}
             min={0}
             max={100}
-            defaultValue={0}
           />
         </Form.Item>
         <Form.Item>
@@ -74,8 +70,7 @@ const EditForm = (finishHandler) => {
           <span
             style={{ padding: "0 5px", fontWeight: "bold", fontSize: "24px" }}
           >
-            {/* {price - (price * disc) / 100} $ */}
-            {calcFinalPrice(price, disc, count)}
+            {count * (price - (price * disc) / 100)} $
           </span>
         </Form.Item>
         <Form.Item>
@@ -87,7 +82,7 @@ const EditForm = (finishHandler) => {
             style={{ marginTop: "30px", height: "50px" }}
             size={"large"}
           >
-            Add
+            Save
           </Button>
         </Form.Item>
       </Form>

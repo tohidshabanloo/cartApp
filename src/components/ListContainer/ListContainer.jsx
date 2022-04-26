@@ -9,13 +9,15 @@ import { calcFinalPrice } from "../../modules/calcFinalPrice";
 
 const { Title, Text } = Typography;
 
-const ListContainer = ({ data, setFormData }) => {
-  const deletHandler = (id) => {
+const ListContainer = ({ data, setData, setEditData }) => {
+  const editHandler = (item) => {
+    setEditData(item);
+  };
+  const deleteHandler = (id) => {
     let finalData = data.filter((item) => item.id !== id);
-    setFormData(finalData);
+    setData(finalData);
   };
   return (
-    // <p>something from before</p>
     <List
       className={`list-container`}
       bordered
@@ -54,9 +56,12 @@ const ListContainer = ({ data, setFormData }) => {
               <Tag className="action">
                 <DeleteOutlined
                   className="delete"
-                  onClick={() => deletHandler(item?.id)}
+                  onClick={() => deleteHandler(item?.id)}
                 />
-                <EditOutlined className="edit" />
+                <EditOutlined
+                  className="edit"
+                  onClick={() => editHandler(item)}
+                />
               </Tag>
             </Col>
           </Row>
