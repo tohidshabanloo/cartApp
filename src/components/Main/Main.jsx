@@ -33,7 +33,7 @@ const Main = () => {
       <Content>
         <ListContainer
           data={formData}
-          setFormData={setFormData}
+          setData={setFormData}
           setEditData={setEditData}
         />
         <Divider />
