@@ -4,7 +4,7 @@ import { Slider, Form, Input, InputNumber, Button } from "antd";
 import { calcFinalPrice } from "../../modules/calcFinalPrice";
 import { v4 as uuidv4 } from "uuid";
 
-const Panel = ({ setFormData }) => {
+const Panel = ({ setFormData, btn }) => {
   const [price, setPrice] = useState(0);
   const [disc, setDisc] = useState(0);
   const [count, setCount] = useState(0);
@@ -85,6 +85,7 @@ const Panel = ({ setFormData }) => {
           </span>
         </Form.Item>
         <Form.Item>
+          
           <Button
             htmlType={"submit"}
             shape={"round"}
@@ -93,7 +94,7 @@ const Panel = ({ setFormData }) => {
             style={{ marginTop: "30px", height: "50px" }}
             size={"large"}
           >
-            Add
+            
           </Button>
         </Form.Item>
       </Form>
