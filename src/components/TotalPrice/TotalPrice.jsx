@@ -20,7 +20,7 @@ const TotalPrice = ({ data }) => {
     <Card className={`summery-container`}>
       <Card.Grid className="total-price">
         <span>قیمت کل</span>
-        <h3>{totalPrice} $</h3>
+        <h3>{totalPrice} تومان</h3>
       </Card.Grid>
       <Card.Grid className="total-discount">
         <span>مجموع تخفیف</span>
