@@ -81,11 +81,10 @@ const Panel = ({ setFormData, btn }) => {
             style={{ padding: "0 5px", fontWeight: "bold", fontSize: "24px" }}
           >
             {/* {price - (price * disc) / 100} $ */}
-            {calcFinalPrice(price, disc, count)} تومان 
+            {calcFinalPrice(price, disc, count)} تومان
           </span>
         </Form.Item>
         <Form.Item>
-          
           <Button
             htmlType={"submit"}
             shape={"round"}
@@ -94,7 +93,7 @@ const Panel = ({ setFormData, btn }) => {
             style={{ marginTop: "30px", height: "50px" }}
             size={"large"}
           >
-            
+            اضافه کن
           </Button>
         </Form.Item>
       </Form>

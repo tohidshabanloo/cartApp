@@ -28,7 +28,7 @@ const Main = () => {
   return (
     <Layout className={`layout-container`}>
       <Sider width={400} className={`side-container`}>
-        <Panel setFormData={setFormData} btn={btn}/>
+        <Panel setFormData={setFormData} />
       </Sider>
       <Content>
         <ListContainer
