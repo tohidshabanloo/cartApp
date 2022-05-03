@@ -4,17 +4,26 @@ import { Slider, Form, Input, InputNumber, Button } from "antd";
 import { calcFinalPrice } from "../../modules/calcFinalPrice";
 import { v4 as uuidv4 } from "uuid";
 
-const Panel = ({ setFormData, btn }) => {
+const Panel = ({ setFormData, formData }) => {
   const [price, setPrice] = useState(0);
   const [disc, setDisc] = useState(0);
   const [count, setCount] = useState(0);
   const finishHandler = (values) => {
-    setFormData((prev) => [...prev, { ...values, id: uuidv4() }]);
+    setFormData((prev) => [...prev, values]);
+    formData
+      ? localStorage.setItem(
+          "cart",
+          JSON.stringify([...formData, { ...values, id: uuidv4() }])
+        )
+      : localStorage.setItem(
+          "cart",
+          JSON.stringify([{ ...values, id: uuidv4() }])
+        );
   };
 
   return (
     <>
-      <Form onFinish={finishHandler}>
+      <Form onFinish={finishHandler} initialValues={{ discount: 0 }}>
         <Form.Item
           className="name"
           label="نام محصول"
